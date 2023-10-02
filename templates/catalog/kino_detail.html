@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{%  block content %}
+    <h2>ФИЛЬМ {{ kino.title }}</h2>
+    <h2>ОПИСАНИЕ {{ kino.summary }}</h2>
+    <h2>РЕЖИССЁР {{ kino.director }}</h2>
+    <h2>РЕЙТИНГ {{ kino.ager }}</h2>
+    <h2>УРОВЕНЬ ПОДПИСКИ {{ kino.status }}</h2>
+    <h2>АКТЁРЫ:</h2>
+    {%  for actor in kino.actor.all %}
+        <p>{{  actor.fname }} // {{ actor.lname }}</p>
+    {%  endfor %}
+
+{%  endblock %}

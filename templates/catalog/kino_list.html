@@ -8,5 +8,23 @@
         </li>
     {% endfor %}
     </ul>
+        {% if is_paginated %}
+    <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+{#          <a href="?page=1">&laquo; first</a>#}
+            <a href="?page={{ page_obj.previous_page_number }}">пред</a>
+        {% endif %}
 
+        <span class="current">
+            Стр {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">след</a>
+{#          <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>#}
+        {% endif %}
+    </span>
+</div>
+{% endif %}
 {%  endblock content %}
