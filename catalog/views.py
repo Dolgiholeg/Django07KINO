@@ -30,3 +30,25 @@ from django.http import HttpResponse
 def info(req,id):
     film = Kino.objects.get(id=id)
     return HttpResponse(film.title)
+
+def status(req):
+    k1 = Status.objects.all()
+    data = {'podpiska':k1}
+    return render(req, 'podpiska.html', data)
+
+def prosmotr(req, id1, id2, id3):
+    print(id1, id2, id3)
+    mas = ['бесплатная','базовая','супер']#kino id2
+    mas2 = ['Free','Base','Super']#user id3 status
+    status = User.objects.get(id=id3)#нашли юзера
+    status = status.groups.all()#нашли его подписки
+    status = status[0].id#нашли айди его подписки(она одна)
+    print(status)
+    if id3 == 0:#выдаёт гостю подписку номер1 - бесплатную
+        status = 1
+    if status >= id2:#сравниваем статус и разрешение на просмотр фильма
+        print('OK')
+    else:
+        print('НЕЛЬЗЯ')
+
+    return render(req,'index.html')

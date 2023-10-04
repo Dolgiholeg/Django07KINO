@@ -20,9 +20,11 @@ from catalog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='home'),
+    path('',views.index, name='home'),
     path('kino/', views.Kinolist.as_view(), name='allkino'),
     path('kino/<slug:pk>/<str:title>', views.KinoDetail.as_view(), name='info'),
     #path('kino/<int:id>/', views.info, name='info'),
     path('user/', include('django.contrib.auth.urls')),
+    path('status',views.status, name='status'),
+    path('status/prosmotr/<int:id1>/<int:id2>/<int:id3>', views.prosmotr, name='prosmotr'),
 ]
