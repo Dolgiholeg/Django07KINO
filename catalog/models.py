@@ -14,6 +14,8 @@ class Director(models.Model):
 
     def __str__(self):
         return f'{self.lname},{self.fname}'
+    def get_absolute_url(self):
+        return reverse('infodirector', args=[self.id, self.lname])
 
 class Actor(models.Model):
     fname = models.CharField(max_length=20, verbose_name='Имя')
@@ -24,6 +26,9 @@ class Actor(models.Model):
 
     def __str__(self):
         return self.lname
+
+    def get_absolute_url(self):
+        return reverse('infoactor', args=[self.id, self.lname])
 
 class Status(models.Model):
     VIBOR =(('бесплатно','бесплатно'),('базовая','базовая'),('супер','супер'))
@@ -68,7 +73,9 @@ class Kino(models.Model):
         return res
     display_actors.short_description = 'Актёры'
 
-
     def get_absolute_url(self):
         return reverse('info', args=[self.id, self.title])
         #return f'kino/{self.id}/{self.title}'
+
+
+
