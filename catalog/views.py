@@ -21,10 +21,24 @@ def index(req):
 from django.views import generic
 class Kinolist(generic.ListView):
     model = Kino
-    paginate_by = 2
+    paginate_by = 3
+
+class Actorlist(generic.ListView):
+    model = Actor
+    paginate_by = 3
+
+class Directorlist(generic.ListView):
+    model = Director
+    paginate_by = 3
 
 class KinoDetail(generic.DetailView):
     model = Kino
+
+class ActorDetail(generic.DetailView):
+    model = Actor
+
+class DirectorDetail(generic.DetailView):
+    model = Director
 
 from django.http import HttpResponse
 def info(req,id):

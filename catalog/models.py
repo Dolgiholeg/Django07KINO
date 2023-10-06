@@ -10,6 +10,7 @@ class Genre(models.Model):
 class Director(models.Model):
     fname = models.CharField(max_length=20, verbose_name='Имя')
     lname = models.CharField(max_length=20, verbose_name='Фамилия')
+    spisok = models.CharField(blank=True, null=True, max_length=100, verbose_name='Фильмы которые снял')
 
     def __str__(self):
         return f'{self.lname},{self.fname}'
@@ -19,6 +20,7 @@ class Actor(models.Model):
     lname = models.CharField(max_length=20, verbose_name='Фамилия')
     born = models.DateField (blank=True, null=True, verbose_name='Дата рождения')
     country = models.CharField(max_length=20, verbose_name='Страна рождения')
+    spisok = models.CharField(blank=True, null=True, max_length=100, verbose_name='Фильмы в которых съиграл')
 
     def __str__(self):
         return self.lname

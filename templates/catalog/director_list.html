@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h2>СПИСОК РЕЖИССЁРОВ:</h2>
+    <ul>{% for director in director_list %}
+        <li>
+            <a href="{{director.get_absolute_url}}">{{ director.fname }} {{ director.lname }}</a>
+        </li>
+    {% endfor %}</ul>
+{%  endblock content %}

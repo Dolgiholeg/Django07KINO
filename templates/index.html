@@ -13,8 +13,8 @@
         <div class = 'menu'>
         <a href=" {% url 'home' %}">ГЛАВНАЯ</a>
         <a href=" {% url 'allkino' %}">ФИЛЬМЫ</a>
-        <a href=" ">АКТЁРЫ</a>
-        <a href=" ">РЕЖИССЁРЫ</a>
+        <a href=" {% url 'allactor' %}">АКТЁРЫ</a>
+        <a href=" {% url 'alldirector' %}">РЕЖИССЁРЫ</a>
         <a href=" {% url 'status' %}">ПОДПИСКА</a>
             {% if not user.username %}
                 <a href="{% url 'login' %} ">LOGIN</a>
