@@ -10,7 +10,7 @@ class Genre(models.Model):
 class Director(models.Model):
     fname = models.CharField(max_length=20, verbose_name='Имя')
     lname = models.CharField(max_length=20, verbose_name='Фамилия')
-    spisok = models.CharField(blank=True, null=True, max_length=100, verbose_name='Фильмы которые снял')
+    spisok = models.CharField(blank=True, null=True, max_length=500, verbose_name='Фильмы которые снял')
 
     def __str__(self):
         return f'{self.lname},{self.fname}'
@@ -22,7 +22,7 @@ class Actor(models.Model):
     lname = models.CharField(max_length=20, verbose_name='Фамилия')
     born = models.DateField (blank=True, null=True, verbose_name='Дата рождения')
     country = models.CharField(max_length=20, verbose_name='Страна рождения')
-    spisok = models.CharField(blank=True, null=True, max_length=100, verbose_name='Фильмы в которых съиграл')
+    spisok = models.CharField(blank=True, null=True, max_length=500, verbose_name='Фильмы в которых съиграл')
 
     def __str__(self):
         return self.lname
@@ -38,7 +38,7 @@ class Status(models.Model):
         return self.name
 
 class Country(models.Model):
-    name = models.CharField(max_length=20, verbose_name='Страна где снимался фильм')
+    name = models.CharField(max_length=100, verbose_name='Страна где снимался фильм')
 
     def __str__(self):
         return self.name
@@ -51,7 +51,7 @@ class AgeRate(models.Model):
         return self.rate
 
 class Kino(models.Model):
-    title = models.CharField(max_length=20, verbose_name='Название')
+    title = models.CharField(max_length=100, verbose_name='Название')
     genre = models.ForeignKey(Genre,on_delete=models.SET_DEFAULT, default=1)
     rating = models.FloatField(verbose_name='Оценка')
     country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True)
