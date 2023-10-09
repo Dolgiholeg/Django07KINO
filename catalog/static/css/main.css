@@ -1,3 +1,6 @@
+body{
+    background: gold;
+}
 .menu {
     display:flex;
     flex-direction: row;
