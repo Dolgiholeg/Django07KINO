@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% load static %}
+    {% block head %}
+    <title>ПРОСМОТР</title>
+        <link rel="stylesheet" href="{% static 'css/mein.css' %}">
+        <link rel="stylesheet" href="{% static 'css/prosmotr.css' %}">
+    {% endblock head %}
+{% block content%}
+    <h3>ФИЛЬМ {{ kino }}</h3>
+    <div class ="screen">
+    {%  if prava %}
+        <h4>
+            ПРИЯТНОГО ПРОСМОТРА
+        </h4>
+    {%  else %}
+        <h4>
+            КУПИТЕ ПОДПИСКУ
+        </h4>
+    {%  endif %}
+    </div>
+    <h3> ВАША ПОДПИСКА {{ status }}</h3>
+    <h3> ДЛЯ ФИЛЬМА НЕОБХОДИМА ПОДПИСКА {{ statuskino }}</h3>
+        {%  if not prava %}
+            {% if  user.username%}
+                <h4>
+                    <a href="{% url 'buystatus' type=2 %}">КУПИТЬ БАЗОВУЮ</a>
+                </h4>
+                <h4>
+                    <a href="{% url 'buystatus' type=3 %}">КУПИТЬ СУПЕР</a>
+                </h4>
+            {% else  %}
+                <h4>
+                    <a href="{% url 'login'%}">КУПИТЬ БАЗОВУЮ</a>
+                </h4>
+                <h4>
+                    <a href="{% url 'login'%}">КУПИТЬ СУПЕР</a>
+                </h4>
+            {%  endif %}
+        {%  endif %}
+{% endblock %}
