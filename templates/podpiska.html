@@ -2,17 +2,17 @@
 {% load static %}
 {% block content %}
     <title>Все фильмы</title>
-    <link rel="stylesheet" href="{% static 'css/mein.css' %}">
-    <link rel="stylesheet" href="{% static 'css/podpisk.css' %}">
-    <h2>Подписки:</h2>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/podpiska.css' %}">
+    <h2>ПОДПИСКИ:</h2>
     {% for one in podpiska %}
         <h3 class="main">{{ one.name }}</h3>
         <div class="cont">
         {% for kino in one.kino_set.all %}
             <div class="card">
                 <img src="{% static kino.image %}" alt="">
-                <h4>{{ kino.title }}</h4>
-                <h6>{{ kino.genre }}</h6>
+                <h1>{{ kino.title }}</h1>
+                <h4>{{ kino.genre }}</h4>
                     {% if not user.username %}
                     <a href="{% url 'prosmotr' kino.id one.id 0 %}">
                         <button>СМОТРЕТЬ</button>

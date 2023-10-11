@@ -1,9 +1,10 @@
 {% extends 'index.html' %}
 {%  block content %}
+    <div class = 'content'>
     <h2>ИМЯ {{ actor.fname }}</h2>
     <h2>ФАМИЛИЯ {{ actor.lname }}</h2>
     <h2>ДАТА РОЖДЕНИЯ {{ actor.born }}</h2>
     <h2>СТРАНА РОЖДЕНИЯ {{ actor.country }}</h2>
     <h2>ФИЛЬМЫ В КОТОРЫХ СЪИГРАЛ {{ actor.spisok }}</h2>
-
+    </div>
 {%  endblock %}

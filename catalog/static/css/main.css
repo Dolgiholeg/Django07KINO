@@ -5,6 +5,19 @@ body{
     padding: 100px;
     background-attachment: fixed;
 }
+.content{
+float: right;
+    width: 600px; padding: 20px; font-family: Arial;color: white;
+}
+.content a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    font-family: Arial;
+}
+.content a:hover{
+    background-color: gold;
+}
 
 .menu {
     display:flex;

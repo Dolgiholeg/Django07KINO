@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {%  block content %}
+     <div class = 'content'>
     <h2>ФИЛЬМ {{ kino.title }}</h2>
     <h2>ОПИСАНИЕ {{ kino.summary }}</h2>
     <h2>РЕЖИССЁР {{ kino.director }}</h2>
@@ -9,5 +10,5 @@
     {%  for actor in kino.actor.all %}
         <p>{{  actor.fname }} // {{ actor.lname }}</p>
     {%  endfor %}
-
+    </div>
 {%  endblock %}

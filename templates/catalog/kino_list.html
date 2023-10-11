@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% block content %}
+    <div class = 'content'>
     <h2>КАТАЛОГ ФИЛЬМОВ</h2>
     <ul>{% for kino in kino_list %}
         <li>
@@ -27,4 +28,5 @@
     </span>
 </div>
 {% endif %}
+    </div>
 {%  endblock content %}

@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% block content %}
+    <div class = 'content'>
     <h2>СПИСОК РЕЖИССЁРОВ:</h2>
     <ul>{% for director in director_list %}
         <li>
@@ -26,4 +27,5 @@
     </span>
 </div>
 {% endif %}
+    </div>
 {%  endblock content %}
