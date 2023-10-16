@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'index.html' %}
+{%  block content %}
 <head>
     <meta charset="UTF-8">
     <title>LOGIN</title>
@@ -17,6 +17,11 @@
                <td>{{ form.password.label_tag }}</td>
                <td>{{ form.password }}</td>
            </tr>
+            <tr>
+                <td>
+                    <a href="{%  url 'password_reset' %}">ЗАБЫЛ ПАРОЛЬ</a>
+                </td>
+            </tr>
         </table>
         <input type="submit" value="ВХОД">
     </form>
@@ -25,3 +30,4 @@
     </h2>
 </body>
 </html>
+{%  endblock %}

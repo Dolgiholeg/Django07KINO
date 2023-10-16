@@ -1,0 +1,19 @@
+.screen{
+    width: 500px;height: 250px;background-color: black;
+    text-align: center;margin: auto;color: white;
+}
+h3{
+   text-align: center;color: white; font-family: Arial;
+}
+h4{
+   text-align: center;color: white; font-family: Arial;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    font-family: Arial;
+}
+a:hover{
+    background-color: gold;
+}

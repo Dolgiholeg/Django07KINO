@@ -4,18 +4,19 @@ body{
     background-size: 100%;
     padding: 100px;
     background-attachment: fixed;
+    font-family: Arial;color: white;
 }
 .content{
 float: right;
-    width: 600px; padding: 20px; font-family: Arial;color: white;
+    width: 600px; padding: 20px;
 }
-.content a{
+a{
     text-decoration: none;
     color: white;
     font-size: 1.5em;
     font-family: Arial;
 }
-.content a:hover{
+a:hover{
     background-color: gold;
 }
 
@@ -25,13 +26,4 @@ float: right;
     justify-content: space-evenly;
     background-color: black;
     line-height: 2em;
-}
-.menu a{
-    text-decoration: none;
-    color: white;
-    font-size: 1.5em;
-    font-family: Arial;
-}
-.menu a:hover{
-    background-color: gold;
 }
